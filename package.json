@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "hyunjin95.github.io",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Personal github user page with Gatsby",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "hyunjin95 <das01063@snu.ac.kr>",
   "dependencies": {
     "gatsby": "^2.18.12",
     "gatsby-image": "^2.2.34",
@@ -19,6 +19,7 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
+    "gh-pages": "^2.2.0",
     "prettier": "^1.19.1"
   },
   "keywords": [
@@ -26,6 +27,7 @@
   ],
   "license": "MIT",
   "scripts": {
+    "deploy": "gatsby build && gh-pages -d public -b master",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
@@ -36,9 +38,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/hyunjin95/hyunjin95.github.io"
   }
 }
