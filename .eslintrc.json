@@ -36,7 +36,8 @@
       {
         "extensions": [".jsx", ".tsx"]
       }
-    ]
+    ],
+    "no-var": "error"
   },
   "settings": {
     "import/resolver": {
