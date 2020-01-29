@@ -36,11 +36,11 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
       <Header siteTitle={data.site.siteMetadata.title} />
       <div style={divStyle}>
         <main>{children}</main>
-        <footer>
-          © 2020, Built with
-          <a href="https://www.gatsbyjs.org"> Gatsby</a>
-        </footer>
       </div>
+      <footer>
+        © 2020, Built with
+        <a href="https://www.gatsbyjs.org"> Gatsby</a>
+      </footer>
     </>
   );
 };
