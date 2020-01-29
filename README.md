@@ -8,7 +8,7 @@ This app was deployed on `Github Pages` using `Gatsby` to practice `React`.
 
 ## Commands
 
-To set up the development environment, clone **the dev branch** and run:
+To set up the development environment, clone the `dev` branch and run:
 
 ```shell
 npm install
@@ -25,3 +25,5 @@ To deploy:
 ```shell
 npm run deploy
 ```
+
+The static website built by Gatsby is published on the `master` branch.
