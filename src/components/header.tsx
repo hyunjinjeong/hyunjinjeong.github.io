@@ -1,40 +1,14 @@
-import { Link } from 'gatsby';
 import React from 'react';
+import { styled } from '@material-ui/core/styles';
 
-interface HeaderProps {
-  siteTitle: string;
-}
+const StyledHeader = styled('header')(({ theme }) => ({
+  padding: theme.spacing(3, 4),
+  color: theme.palette.primary.contrastText,
+  backgroundColor: theme.palette.primary.main,
+}));
 
-const headerStyle = {
-  background: 'rebeccapurple',
-  marginBottom: '1.45rem',
-};
-
-const divStyle = {
-  margin: '0 auto',
-  maxWidth: '960',
-  padding: '1.45rem 1.0875rem',
-};
-
-const titleStyle = {
-  margin: '0',
-};
-
-const linkStyle = {
-  color: 'white',
-  textDecoration: 'none',
-};
-
-const Header = ({ siteTitle = '' }: HeaderProps): JSX.Element => (
-  <header style={headerStyle}>
-    <div style={divStyle}>
-      <h1 style={titleStyle}>
-        <Link to="/" style={linkStyle}>
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
+const Header = (): JSX.Element => (
+  <StyledHeader id="header">뭘 넣어야 하나..</StyledHeader>
 );
 
 export default Header;

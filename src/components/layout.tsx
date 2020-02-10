@@ -6,43 +6,31 @@
  */
 
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import { styled } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 import Header from './header';
-
-const divStyle = {
-  margin: '0 auto',
-  maxWidth: '960',
-  padding: '0 1.0875rem 1.45rem',
-};
+import Footer from './footer';
+import ScrollTopFAB from './scrolltop';
 
 interface LayoutProps {
   children: JSX.Element;
 }
 
-const Layout = ({ children }: LayoutProps): JSX.Element => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
+const StyledRoot = styled('div')({
+  display: 'flex',
+  flexDirection: 'column',
+  minHeight: '100vh',
+});
 
-  return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div style={divStyle}>
-        <main>{children}</main>
-      </div>
-      <footer>
-        © 2020, Built with
-        <a href="https://www.gatsbyjs.org"> Gatsby</a>
-      </footer>
-    </>
-  );
-};
+const Layout = ({ children }: LayoutProps): JSX.Element => (
+  <StyledRoot>
+    <CssBaseline />
+    <Header />
+    {children}
+    <Footer />
+    <ScrollTopFAB />
+  </StyledRoot>
+);
 
 export default Layout;
