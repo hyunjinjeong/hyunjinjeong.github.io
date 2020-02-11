@@ -20,19 +20,17 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
+        name: 'hyunjin95.github.io',
+        short_name: 'hyunjin95',
         start_url: '/',
-        background_color: '#663399',
+        background_color: '#4fc3f7',
         theme_color: '#663399',
-        display: 'minimal-ui',
-        icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
+        display: 'standalone',
+        icon: 'src/images/icon.png', // This path is relative to the root of the site.
       },
     },
+    `gatsby-plugin-offline`,
     'gatsby-plugin-typescript',
     'gatsby-plugin-material-ui',
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 };
