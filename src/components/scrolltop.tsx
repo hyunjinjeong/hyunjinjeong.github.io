@@ -11,22 +11,28 @@ const StyledDiv = styled('div')(({ theme }) => ({
   right: theme.spacing(3),
 }));
 
+export const scrollToAnchor = (
+  id: string,
+  event: React.MouseEvent<HTMLElement>,
+): void => {
+  const anchor = (event.currentTarget.ownerDocument || document).querySelector(
+    id,
+  );
+
+  if (anchor) {
+    anchor.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+};
+
 const ScrollTopFAB: React.FC = () => {
   const trigger = useScrollTrigger();
 
-  const handleClick = (event: React.MouseEvent<HTMLDivElement>): void => {
-    const anchor = (
-      event.currentTarget.ownerDocument || document
-    ).querySelector('#header');
-
-    if (anchor) {
-      anchor.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-  };
-
   return (
     <Zoom in={trigger}>
-      <StyledDiv onClick={handleClick} role="presentation">
+      <StyledDiv
+        onClick={(e): void => scrollToAnchor(`#header`, e)}
+        role="presentation"
+      >
         <Fab color="secondary" size="small" aria-label="scroll back to top">
           <KeyboardArrowUpIcon />
         </Fab>
