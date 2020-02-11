@@ -1,14 +1,39 @@
 import React from 'react';
 import { styled } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import Container from '@material-ui/core/Container';
 
-const StyledHeader = styled('header')(({ theme }) => ({
-  padding: theme.spacing(3, 4),
-  color: theme.palette.primary.contrastText,
-  backgroundColor: theme.palette.primary.main,
+import { scrollToAnchor } from './scrolltop';
+
+const StyledHeader = styled('header')({
+  backgroundColor: '#2f3e4f',
+});
+
+const StyledContainer = styled(Container)(({ theme }) => ({
+  padding: theme.spacing(1.5, 0),
+  display: 'flex',
+  justifyContent: 'flex-end',
+}));
+
+const StyledButton = styled(Button)(({ theme }) => ({
+  marginLeft: theme.spacing(1),
+  color: 'white',
 }));
 
 const Header = (): JSX.Element => (
-  <StyledHeader id="header">뭘 넣어야 하나..</StyledHeader>
+  <StyledHeader id="header">
+    <StyledContainer maxWidth="md">
+      <StyledButton
+        size="large"
+        onClick={(e): void => scrollToAnchor(`#header`, e)}
+      >
+        About me
+      </StyledButton>
+      <StyledButton size="large" disabled>
+        Blog
+      </StyledButton>
+    </StyledContainer>
+  </StyledHeader>
 );
 
 export default Header;

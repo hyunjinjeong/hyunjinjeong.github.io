@@ -14,7 +14,7 @@ import Footer from './footer';
 import ScrollTopFAB from './scrolltop';
 
 interface LayoutProps {
-  children: JSX.Element;
+  children: JSX.Element | JSX.Element[];
 }
 
 const StyledRoot = styled('div')({
@@ -24,13 +24,15 @@ const StyledRoot = styled('div')({
 });
 
 const Layout = ({ children }: LayoutProps): JSX.Element => (
-  <StyledRoot>
+  <>
     <CssBaseline />
-    <Header />
-    {children}
-    <Footer />
+    <StyledRoot>
+      <Header />
+      {children}
+      <Footer />
+    </StyledRoot>
     <ScrollTopFAB />
-  </StyledRoot>
+  </>
 );
 
 export default Layout;
