@@ -3,13 +3,20 @@ import Avatar from '@material-ui/core/Avatar';
 import { styled } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
+import IconButton from '@material-ui/core/IconButton';
+import MailOutlineIcon from '@material-ui/icons/MailOutline';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import PhoneIcon from '@material-ui/icons/Phone';
+import Tooltip from '@material-ui/core/Tooltip';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import InstagramIcon from '@material-ui/icons/Instagram';
 
 import Face from '../images/face.png';
 
 const StyledBackground = styled('div')(({ theme }) => ({
   backgroundColor: '#71ba9d',
-  paddingTop: theme.spacing(8),
-  paddingBottom: theme.spacing(2),
+  padding: theme.spacing(6, 2, 4),
   color: theme.palette.primary.contrastText,
 }));
 
@@ -22,25 +29,111 @@ const StyledAvatar = styled(Avatar)(({ theme }) => ({
   marginRight: 'auto',
 }));
 
+const iconStyle = {
+  fontSize: '30px',
+  color: 'white',
+};
+
+const hrStyle = {
+  height: '2px',
+  border: '0',
+  background: 'white',
+  width: '50%',
+};
+
+const AboutMe = (): JSX.Element => (
+  <>
+    <StyledAvatar alt="my face" src={Face} />
+    <Typography align="center" variant="h2" component="h1">
+      <strong>HYUNJIN JEONG</strong>
+    </Typography>
+    <Typography
+      align="center"
+      color="textPrimary"
+      variant="overline"
+      component="h2"
+    >
+      A developer who wants to write better code than yesterday
+    </Typography>
+  </>
+);
+
+const Contacts = (): JSX.Element => (
+  <>
+    <Grid container>
+      <Grid item xs={12}>
+        <Grid container justify="center">
+          <Grid item>
+            <a
+              href="https://github.com/hyunjin95"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Tooltip title="GitHub">
+                <IconButton aria-label="GitHub Icon">
+                  <GitHubIcon style={iconStyle} />
+                </IconButton>
+              </Tooltip>
+            </a>
+          </Grid>
+          <Grid item>
+            <a href="mailto:hyunjin.dev@gmail.com">
+              <Tooltip title="Email">
+                <IconButton aria-label="Email Icon">
+                  <MailOutlineIcon style={iconStyle} />
+                </IconButton>
+              </Tooltip>
+            </a>
+          </Grid>
+          <Grid item>
+            <a href="tel:+821046245993">
+              <Tooltip title="Phone">
+                <IconButton aria-label="Phone Icon">
+                  <PhoneIcon style={iconStyle} />
+                </IconButton>
+              </Tooltip>
+            </a>
+          </Grid>
+          <Grid item>
+            <a
+              href="https://www.instagram.com/hyunjin_j_95/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Tooltip title="Instagram">
+                <IconButton aria-label="Instagram Icon">
+                  <InstagramIcon style={iconStyle} />
+                </IconButton>
+              </Tooltip>
+            </a>
+          </Grid>
+          <Grid item>
+            <a
+              href="https://www.facebook.com/profile.php?id=100003653446976"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Tooltip title="Facebook">
+                <IconButton aria-label="Facebook Icon">
+                  <FacebookIcon style={iconStyle} />
+                </IconButton>
+              </Tooltip>
+            </a>
+          </Grid>
+        </Grid>
+      </Grid>
+    </Grid>
+  </>
+);
+
 const Description: React.FC = () => (
   <StyledBackground>
-    <Container maxWidth="md">
-      <StyledAvatar alt="my face" src={Face} />
-      <Typography align="center" variant="h2" component="h1">
-        <strong>HYUNJIN JEONG</strong>
+    <Container maxWidth="sm">
+      <AboutMe />
+      <Typography align="center" variant="h4">
+        <hr style={hrStyle} />
       </Typography>
-      <Typography
-        align="center"
-        color="textPrimary"
-        variant="overline"
-        component="h2"
-      >
-        A developer who wants to write better code than yesterday
-      </Typography>
-      <Typography align="center" variant="h3" component="h2" gutterBottom>
-        -------------------
-      </Typography>
-      깃헙 로고 이메일 주소 인스타
+      <Contacts />
     </Container>
   </StyledBackground>
 );
