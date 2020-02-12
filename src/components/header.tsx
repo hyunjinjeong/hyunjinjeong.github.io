@@ -10,7 +10,7 @@ const StyledHeader = styled('header')({
 });
 
 const StyledContainer = styled(Container)(({ theme }) => ({
-  padding: theme.spacing(1.5, 0),
+  padding: theme.spacing(1.5, 2),
   display: 'flex',
   justifyContent: 'flex-end',
 }));
