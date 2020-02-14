@@ -69,7 +69,7 @@ const Contacts = (): JSX.Element => (
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Tooltip title="GitHub">
+              <Tooltip title="hyunjin95">
                 <IconButton aria-label="GitHub Icon">
                   <GitHubIcon style={iconStyle} />
                 </IconButton>
@@ -78,7 +78,7 @@ const Contacts = (): JSX.Element => (
           </Grid>
           <Grid item>
             <a href="mailto:hyunjin.dev@gmail.com">
-              <Tooltip title="Email">
+              <Tooltip title="hyunjin.dev@gmail.com">
                 <IconButton aria-label="Email Icon">
                   <MailOutlineIcon style={iconStyle} />
                 </IconButton>
@@ -87,7 +87,7 @@ const Contacts = (): JSX.Element => (
           </Grid>
           <Grid item>
             <a href="tel:+821046245993">
-              <Tooltip title="Phone">
+              <Tooltip title="010-4624-5993">
                 <IconButton aria-label="Phone Icon">
                   <PhoneIcon style={iconStyle} />
                 </IconButton>
@@ -100,7 +100,7 @@ const Contacts = (): JSX.Element => (
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Tooltip title="Instagram">
+              <Tooltip title="@hyunjin_j_95">
                 <IconButton aria-label="Instagram Icon">
                   <InstagramIcon style={iconStyle} />
                 </IconButton>
@@ -113,7 +113,7 @@ const Contacts = (): JSX.Element => (
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Tooltip title="Facebook">
+              <Tooltip title="정현진">
                 <IconButton aria-label="Facebook Icon">
                   <FacebookIcon style={iconStyle} />
                 </IconButton>
