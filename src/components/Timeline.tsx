@@ -44,7 +44,7 @@ const StyledTimeline = styled(Typography)(({ theme }) => ({
 
 const StyledCard = styled(Card)(({ theme }) => ({
   padding: theme.spacing(2, 2),
-  margin: theme.spacing(2, 2),
+  margin: theme.spacing(2, 0),
 }));
 
 const StyledDateRight = styled(Typography)(({ theme }) => ({

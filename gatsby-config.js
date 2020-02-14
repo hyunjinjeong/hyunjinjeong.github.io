@@ -25,7 +25,7 @@ module.exports = {
         start_url: '/',
         background_color: '#4fc3f7',
         theme_color: '#663399',
-        display: 'standalone',
+        display: 'browser',
         icon: 'src/images/icon.png', // This path is relative to the root of the site.
       },
     },
