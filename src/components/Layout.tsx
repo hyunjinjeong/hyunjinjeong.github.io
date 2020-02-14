@@ -9,9 +9,9 @@ import React from 'react';
 import { styled } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
-import Header from './header';
-import Footer from './footer';
-import ScrollTopFAB from './scrolltop';
+import Header from './Header';
+import Footer from './Footer';
+import ScrollTopFAB from './ScrollTop';
 
 interface LayoutProps {
   children: JSX.Element | JSX.Element[];

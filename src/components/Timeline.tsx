@@ -9,11 +9,11 @@ import CardHeader from '@material-ui/core/CardHeader';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import Avatar from '@material-ui/core/Avatar';
 import SchoolIcon from '@material-ui/icons/School';
 import SportsEsportsIcon from '@material-ui/icons/SportsEsports';
 import LocalAirportIcon from '@material-ui/icons/LocalAirport';
 import MemoryIcon from '@material-ui/icons/Memory';
-import Avatar from '@material-ui/core/Avatar';
 
 interface CardProps {
   right?: boolean;
@@ -25,7 +25,7 @@ interface CardProps {
 }
 
 const StyledBackground = styled('div')(({ theme }) => ({
-  padding: theme.spacing(6, 2, 4),
+  padding: theme.spacing(8, 2, 8),
   color: 'black',
 }));
 
@@ -230,7 +230,7 @@ const Timeline: React.FC = () => {
     <StyledBackground>
       <Container maxWidth="md">
         <StyledTimeline variant="h3" align="center">
-          Timeline
+          <strong>TIMELINE</strong>
         </StyledTimeline>
         <CardGridItem right {...cardContents.university} />
         <CardGridItem {...cardContents.airforce} />

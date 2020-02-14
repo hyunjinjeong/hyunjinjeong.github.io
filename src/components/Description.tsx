@@ -1,6 +1,6 @@
 import React from 'react';
-import Avatar from '@material-ui/core/Avatar';
 import { styled } from '@material-ui/core/styles';
+import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
