@@ -1,12 +1,13 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
-import { styled } from '@material-ui/core/styles';
+import { styled, useTheme } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardHeader from '@material-ui/core/CardHeader';
 import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 import Avatar from '@material-ui/core/Avatar';
 import Face from '../images/face.png';
@@ -25,14 +26,11 @@ const StyledBackground = styled('div')(({ theme }) => ({
 }));
 
 const StyledDivider = styled('div')(({ theme }) => ({
-  position: 'absolute',
   color: 'black',
   width: theme.spacing(0.5),
-  left: '50%',
-  [theme.breakpoints.down('sm')]: {
-    left: '10%',
-  },
   height: '100%',
+  margin: 'auto',
+  marginTop: theme.spacing(-13),
   backgroundColor: 'black',
 }));
 
@@ -46,29 +44,25 @@ const StyledDateRight = styled(Typography)(({ theme }) => ({
     position: 'absolute',
     left: '57%',
     top: 0,
-    marginTop: theme.spacing(4.5),
+    marginTop: theme.spacing(6),
   },
 }));
 
-const StyledDateLeft = styled(Typography)(({ theme }) => ({
+const StyledDateLeft = styled(StyledDateRight)(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
-    position: 'absolute',
+    left: 'auto',
     right: '57%',
-    top: 0,
-    marginTop: theme.spacing(4.5),
   },
 }));
 
 const StyledAvatar = styled(Avatar)(({ theme }) => ({
-  position: 'absolute',
-  left: '50%',
-  [theme.breakpoints.down('sm')]: {
-    left: '10%',
-  },
   width: theme.spacing(10),
   height: theme.spacing(10),
-  marginTop: theme.spacing(2),
-  marginLeft: theme.spacing(-4.8),
+  top: 0,
+  marginTop: theme.spacing(3),
+  marginLeft: 'auto',
+  marginRight: 'auto',
+  zIndex: 2,
 }));
 
 const TimelineCard: React.FC<CardProps> = ({
@@ -104,6 +98,29 @@ const AlignedCard: React.FC<CardProps> = ({
   content,
   date,
 }: CardProps) => {
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+
+  if (isSmallScreen) {
+    return (
+      <Grid container style={{ position: 'relative' }}>
+        <Grid item xs={3} sm={2}>
+          <StyledAvatar alt="my face" src={Face} />
+          <StyledDivider />
+        </Grid>
+        <Grid item xs={9} sm={10}>
+          <TimelineCard
+            title={title}
+            subheader={subheader}
+            content={content}
+            date={date}
+            right={right}
+          />
+        </Grid>
+      </Grid>
+    );
+  }
+
   return (
     <Grid
       container
@@ -120,8 +137,8 @@ const AlignedCard: React.FC<CardProps> = ({
         />
       </Grid>
       <Grid item sm={2} md={2}>
-        <StyledDivider />
         <StyledAvatar alt="my face" src={Face} />
+        <StyledDivider />
       </Grid>
       <Grid item md={5} />
     </Grid>
