@@ -3,7 +3,7 @@ import { styled } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 
-import { scrollToAnchor } from './ScrollTop';
+import { scrollToAnchor } from '../common/ScrollTop';
 
 const StyledHeader = styled('header')({
   backgroundColor: '#2f3e4f',

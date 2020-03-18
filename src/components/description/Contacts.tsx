@@ -1,8 +1,4 @@
 import React from 'react';
-import { styled } from '@material-ui/core/styles';
-import Avatar from '@material-ui/core/Avatar';
-import Typography from '@material-ui/core/Typography';
-import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import IconButton from '@material-ui/core/IconButton';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
@@ -12,51 +8,10 @@ import Tooltip from '@material-ui/core/Tooltip';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 
-import Face from '../images/face.png';
-
-const StyledBackground = styled('div')(({ theme }) => ({
-  backgroundColor: '#71ba9d',
-  padding: theme.spacing(6, 2, 4),
-  color: theme.palette.primary.contrastText,
-}));
-
-const StyledAvatar = styled(Avatar)(({ theme }) => ({
-  width: theme.spacing(22),
-  height: theme.spacing(22),
-  marginTop: theme.spacing(2),
-  marginBottom: theme.spacing(5),
-  marginLeft: 'auto',
-  marginRight: 'auto',
-}));
-
 const iconStyle = {
   fontSize: '30px',
   color: 'white',
 };
-
-const hrStyle = {
-  height: '2px',
-  border: '0',
-  background: 'white',
-  width: '50%',
-};
-
-const AboutMe = (): JSX.Element => (
-  <>
-    <StyledAvatar alt="my face" src={Face} />
-    <Typography align="center" variant="h2" component="h1">
-      <strong>HYUNJIN JEONG</strong>
-    </Typography>
-    <Typography
-      align="center"
-      color="textPrimary"
-      variant="overline"
-      component="h2"
-    >
-      A developer who wants to write better code than yesterday
-    </Typography>
-  </>
-);
 
 const Contacts = (): JSX.Element => (
   <>
@@ -126,16 +81,4 @@ const Contacts = (): JSX.Element => (
   </>
 );
 
-const Description: React.FC = () => (
-  <StyledBackground>
-    <Container maxWidth="sm">
-      <AboutMe />
-      <Typography align="center" variant="h4">
-        <hr style={hrStyle} />
-      </Typography>
-      <Contacts />
-    </Container>
-  </StyledBackground>
-);
-
-export default Description;
+export default Contacts;

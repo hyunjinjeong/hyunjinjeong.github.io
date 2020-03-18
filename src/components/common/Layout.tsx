@@ -9,8 +9,8 @@ import React from 'react';
 import { styled } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
-import Header from './Header';
-import Footer from './Footer';
+import Header from '../header/Header';
+import Footer from '../footer/Footer';
 import ScrollTopFAB from './ScrollTop';
 
 interface LayoutProps {
