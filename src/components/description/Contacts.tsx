@@ -20,7 +20,7 @@ const Contacts = (): JSX.Element => (
         <Grid container justify="center">
           <Grid item>
             <a
-              href="https://github.com/hyunjin95"
+              href="https://github.com/hyunjinjeong"
               target="_blank"
               rel="noopener noreferrer"
             >

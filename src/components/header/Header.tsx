@@ -2,6 +2,7 @@ import React from 'react';
 import { styled } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
+import Link from '@material-ui/core/Link';
 
 import { scrollToAnchor } from '../common/ScrollTop';
 
@@ -29,9 +30,13 @@ const Header = (): JSX.Element => (
       >
         About me
       </StyledButton>
-      <StyledButton size="large" disabled>
-        Blog
-      </StyledButton>
+      <Link
+        href="https://velog.io/@das01063"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <StyledButton size="large">Blog</StyledButton>
+      </Link>
     </StyledContainer>
   </StyledHeader>
 );
